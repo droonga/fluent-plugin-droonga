@@ -132,11 +132,11 @@ class AdapterGroongaSelectTest < Test::Unit::TestCase
       end
 
       def test_single_column
-        assert_matchTo(["_key"], "_key")
+        assert_matchTo(["_key"], ["_key"])
       end
 
       def test_multiple_columns
-        assert_matchTo(["_key", "content"], "_key || content")
+        assert_matchTo(["_key", "content"], ["_key", "content"])
       end
     end
   end
@@ -163,7 +163,7 @@ class AdapterGroongaSelectTest < Test::Unit::TestCase
       start_time_in_unix_time = Time.parse(start_time).to_f
       headers = [["_id","UInt32"]]
       expected_select_response = [[status_code, start_time_in_unix_time, elapsed_time],
-                                  [[[count], headers]]]
+                                  [[[count], headers, []]]]
 
       assert_equal(expected_select_response, convert(search_response))
     end
