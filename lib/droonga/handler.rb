@@ -82,6 +82,11 @@ module Droonga
       @output_values[name] = value
     end
 
+    def emit_error(status_code, value, name = nil)
+      envelope["statusCode"] = status_code
+      emit(value, name)
+    end
+
     def post(message, destination)
       @forwarder.forward(envelope, message, destination)
     end

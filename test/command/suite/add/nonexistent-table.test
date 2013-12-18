@@ -1,0 +1,10 @@
+{
+  "type": "add",
+  "dataset": "Droonga",
+  "body": {
+    "table": "NonExistent",
+    "key": "key",
+    "values": {
+    }
+  }
+}

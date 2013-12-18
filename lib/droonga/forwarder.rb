@@ -74,7 +74,7 @@ module Droonga
       if command =~ /\.result$/
         message = {
           inReplyTo: envelope["id"],
-          statusCode: 200,
+          statusCode: envelope["statusCode"] || 200,
           type: command,
           body: body
         }
