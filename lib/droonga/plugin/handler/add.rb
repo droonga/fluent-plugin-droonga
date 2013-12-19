@@ -25,20 +25,23 @@ module Droonga
 
     command :add
     def add(request)
-      outputs = process_add(request)
-      emit(outputs)
-    end
+      table_name = request["table"]
+      table = @context[table_name]
+      unless table
+        emit_error 404, {
+          "name" => "TableNotFound",
+          "message" => "Table <#{table_name}> is not found"
+        }
+        return
+      end
 
-    private
-    def process_add(request)
-      table = @context[request["table"]]
-      return [false] unless table
       if table.support_key?
         table.add(request["key"], request["values"])
       else
         table.add(request["values"])
       end
-      [true]
+
+      emit([true])
     end
   end
 end

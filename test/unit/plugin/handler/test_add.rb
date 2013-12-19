@@ -116,7 +116,10 @@ class AddHandlerTest < Test::Unit::TestCase
         "table"  => "Nonexistent",
         "values" => {},
       }
-      mock(@handler).emit([false])
+      mock(@handler).emit_error(404, {
+        "name" => "TableNotFound",
+        "message" => "Table <Nonexistent> is not found"
+      })
       @handler.add(request)
     end
   end

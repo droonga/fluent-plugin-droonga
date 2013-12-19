@@ -35,6 +35,10 @@ module Droonga
       @handler.emit(value, name)
     end
 
+    def emit_error(value, name=nil)
+      @handler.emit_error(value, name)
+    end
+
     def post(body, destination=nil)
       @handler.post(body, destination)
     end
