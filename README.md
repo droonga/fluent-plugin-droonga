@@ -1,5 +1,9 @@
 # Fluent::Plugin::Droonga
 
+NOTE: This project had been renamed to
+[Droonga engine](https://github.com/droonga/droonga-engine) because
+Droonga engine doesn't depend on fluentd.
+
 ## What's "Droonga"?
 
 Droonga is a scalable data processing engine, named from "Distributed
