@@ -1,6 +1,6 @@
 # Fluent::Plugin::Droonga
 
-NOTE: This project had been renamed to
+NOTE: This project has been renamed to
 [Droonga engine](https://github.com/droonga/droonga-engine) because
 Droonga engine doesn't depend on fluentd.
 
