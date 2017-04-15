@@ -1,4 +1,4 @@
-# Fluent::Plugin::Droonga
+# Fluent::Plugin::Droonga, a plugin for [Fluentd](http://fluentd.org)
 
 NOTE: This project has been renamed to
 [Droonga engine](https://github.com/droonga/droonga-engine) because
